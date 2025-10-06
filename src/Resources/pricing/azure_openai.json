@@ -1,0 +1,7 @@
+[
+  {"provider":"azure_openai","model":"gpt-4.1","input_per_1m":5.00,"output_per_1m":15.00,"cached_input_per_1m":1.25,"unit":1000000,"currency":"USD","source":"azure_openai_oct2025"},
+  {"provider":"azure_openai","model":"gpt-4.1-mini","input_per_1m":0.80,"output_per_1m":3.20,"cached_input_per_1m":0.20,"unit":1000000,"currency":"USD","source":"azure_openai_oct2025"},
+  {"provider":"azure_openai","model":"gpt-35-turbo","input_per_1m":0.50,"output_per_1m":1.50,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"azure_openai_oct2025"},
+  {"provider":"azure_openai","model":"text-embedding-3-large","input_per_1m":0.13,"output_per_1m":0.00,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"azure_openai_oct2025"},
+  {"provider":"azure_openai","model":"text-embedding-3-small","input_per_1m":0.02,"output_per_1m":0.00,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"azure_openai_oct2025"}
+]
