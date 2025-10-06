@@ -1,0 +1,7 @@
+[
+  {"provider":"xai_grok","model":"grok-4","input_per_1m":3.00,"output_per_1m":15.00,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"xai_docs_oct2025"},
+  {"provider":"xai_grok","model":"grok-4-fast","input_per_1m":0.50,"output_per_1m":1.50,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"xai_docs_oct2025"},
+  {"provider":"xai_grok","model":"grok-4-reasoning","input_per_1m":1.00,"output_per_1m":3.00,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"xai_docs_oct2025"},
+  {"provider":"xai_grok","model":"grok-code-fast-1","input_per_1m":0.20,"output_per_1m":1.50,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"xai_docs_oct2025"},
+  {"provider":"xai_grok","model":"grok-image","input_per_1m":0.00,"output_per_1m":0.00,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"xai_docs_oct2025"}
+]
