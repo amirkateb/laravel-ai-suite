@@ -1,0 +1,7 @@
+[
+  {"provider":"anthropic","model":"claude-3-opus","input_per_1m":15.00,"output_per_1m":75.00,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"anthropic_pricing_oct2025"},
+  {"provider":"anthropic","model":"claude-3-sonnet","input_per_1m":3.00,"output_per_1m":15.00,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"anthropic_pricing_oct2025"},
+  {"provider":"anthropic","model":"claude-3-haiku","input_per_1m":0.25,"output_per_1m":1.25,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"anthropic_pricing_oct2025"},
+  {"provider":"anthropic","model":"claude-3.5-sonnet","input_per_1m":3.00,"output_per_1m":15.00,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"anthropic_pricing_oct2025"},
+  {"provider":"anthropic","model":"claude-3.5-haiku","input_per_1m":0.25,"output_per_1m":1.25,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"anthropic_pricing_oct2025"}
+]
