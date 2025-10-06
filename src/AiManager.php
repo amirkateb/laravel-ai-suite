@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Request;
 use AmirKateb\AiSuite\Contracts\DriverInterface;
 use AmirKateb\AiSuite\Models\AiLog;
+use AmirKateb\AiSuite\Models\AiModelPrice;
 use AmirKateb\AiSuite\Support\UsageCalculator;
 
 class AiManager
@@ -134,9 +135,23 @@ class AiManager
 
     public function calculateCost(array $usage): float
     {
-        $name = $this->lastProviderUsed ?: $this->activeDriverName;
-        $driverConfig = $this->config['providers'][$name] ?? [];
-        $pricing = $driverConfig['pricing'][$usage['model'] ?? ''] ?? null;
+        $provider = $this->lastProviderUsed ?: $this->activeDriverName;
+        $model = (string)($usage['model'] ?? '');
+        if ($provider && $model) {
+            $row = AiModelPrice::query()->where('provider', $provider)->where('model', $model)->first();
+            if ($row) {
+                $unit = (int)$row->unit ?: 1000000;
+                $inp = (float)$row->input_per_1m;
+                $oup = (float)$row->output_per_1m;
+                $in = (float)($usage['input_tokens'] ?? 0);
+                $out = (float)($usage['output_tokens'] ?? 0);
+                $cost = ($in / $unit) * $inp + ($out / $unit) * $oup;
+                $round = (int)(config('ai.costing.round') ?? 6);
+                return round($cost, $round);
+            }
+        }
+        $driverConfig = $this->config['providers'][$provider] ?? [];
+        $pricing = $driverConfig['pricing'][$model] ?? null;
         if (!$pricing) {
             return 0.0;
         }
@@ -200,7 +215,7 @@ class AiManager
                 'request_payload' => json_encode($requestSnapshot, JSON_UNESCAPED_UNICODE),
                 'response_payload' => is_array($result) ? json_encode($result, JSON_UNESCAPED_UNICODE) : (string) $result,
                 'started_at' => $startedAt,
-                'finished_at' => $finishedAt,
+                'finished_at' => $finishedAt
             ]);
             return is_array($result) ? $result : ['data' => $result];
         } catch (\Throwable $e) {
@@ -226,7 +241,7 @@ class AiManager
                 'request_payload' => json_encode($requestSnapshot, JSON_UNESCAPED_UNICODE),
                 'response_payload' => null,
                 'started_at' => $startedAt,
-                'finished_at' => $finishedAt,
+                'finished_at' => $finishedAt
             ]);
             throw $e;
         }
