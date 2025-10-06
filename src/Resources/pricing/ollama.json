@@ -1,0 +1,7 @@
+[
+  {"provider":"ollama","model":"llama3.1","input_per_1m":0.00,"output_per_1m":0.00,"cached_input_per_1m":null,"unit":1000000,"currency":"LOCAL","source":"local_llm_oct2025"},
+  {"provider":"ollama","model":"mistral-nemo","input_per_1m":0.00,"output_per_1m":0.00,"cached_input_per_1m":null,"unit":1000000,"currency":"LOCAL","source":"local_llm_oct2025"},
+  {"provider":"ollama","model":"phi3-mini","input_per_1m":0.00,"output_per_1m":0.00,"cached_input_per_1m":null,"unit":1000000,"currency":"LOCAL","source":"local_llm_oct2025"},
+  {"provider":"ollama","model":"gemma2:27b","input_per_1m":0.00,"output_per_1m":0.00,"cached_input_per_1m":null,"unit":1000000,"currency":"LOCAL","source":"local_llm_oct2025"},
+  {"provider":"ollama","model":"codellama:70b","input_per_1m":0.00,"output_per_1m":0.00,"cached_input_per_1m":null,"unit":1000000,"currency":"LOCAL","source":"local_llm_oct2025"}
+]
