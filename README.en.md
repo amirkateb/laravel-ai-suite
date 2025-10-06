@@ -44,17 +44,99 @@ Key options in `config/ai.php`:
 
 Sample `.env` snippet:
 ```
+# =========================
+# AI Suite — Core Settings
+# =========================
 AI_DEFAULT=openai
+
+# Fallback
 AI_FALLBACK_ENABLED=false
-AI_FALLBACK_ORDER=openai,google_gemini,deepseek,xai_grok,anthropic,azure_openai,aws_bedrock,ollama
-OPENAI_API_KEY=...
-GEMINI_API_KEY=...
-DEEPSEEK_API_KEY=...
-XAI_API_KEY=...
-ANTHROPIC_API_KEY=...
-AZURE_OPENAI_API_KEY=...
-AWS_ACCESS_KEY_ID=...
-AWS_SECRET_ACCESS_KEY=...
+AI_FALLBACK_ORDER=openai,google_gemini,deepseek,xai_grok,ollama,anthropic,azure_openai,aws_bedrock
+
+# Conversation history limits
+AI_HISTORY_MAX_MESSAGES=50
+AI_HISTORY_MAX_TOKENS=32000
+
+# Costing
+AI_COST_CURRENCY=USD
+AI_COST_ENABLED=true
+
+# Timeouts (seconds)
+AI_TIMEOUT_CONNECT=10
+AI_TIMEOUT_READ=120
+
+# Retries
+AI_RETRY_ENABLED=true
+AI_RETRY_TIMES=2
+AI_RETRY_SLEEP_MS=250
+
+# =========================
+# OpenAI
+# =========================
+OPENAI_ENABLED=true
+OPENAI_API_KEY=sk-xxxxx
+OPENAI_BASE_URL=https://api.openai.com/v1
+OPENAI_ORG=
+OPENAI_PROJECT=
+OPENAI_MODELS_TTL=3600
+
+# =========================
+# Google Gemini
+# =========================
+GEMINI_ENABLED=true
+GEMINI_API_KEY=AIzaSyxxxxx
+GEMINI_BASE_URL=https://generativelanguage.googleapis.com
+GEMINI_MODELS_TTL=3600
+
+# =========================
+# DeepSeek
+# =========================
+DEEPSEEK_ENABLED=true
+DEEPSEEK_API_KEY=ds-xxxxx
+DEEPSEEK_BASE_URL=https://api.deepseek.com
+DEEPSEEK_MODELS_TTL=3600
+
+# =========================
+# xAI Grok
+# =========================
+XAI_ENABLED=true
+XAI_API_KEY=xai-xxxxx
+XAI_BASE_URL=https://api.x.ai
+XAI_MODELS_TTL=3600
+
+# =========================
+# Ollama (local)
+# =========================
+OLLAMA_ENABLED=true
+OLLAMA_BASE_URL=http://localhost:11434
+OLLAMA_MODELS_TTL=60
+
+# =========================
+# Anthropic
+# =========================
+ANTHROPIC_ENABLED=true
+ANTHROPIC_API_KEY=sk-ant-xxxxx
+ANTHROPIC_BASE_URL=https://api.anthropic.com
+ANTHROPIC_MODELS_TTL=3600
+
+# =========================
+# Azure OpenAI
+# =========================
+AZURE_OPENAI_ENABLED=false
+AZURE_OPENAI_API_KEY=
+AZURE_OPENAI_ENDPOINT= # e.g. https://your-resource.openai.azure.com
+AZURE_OPENAI_DEPLOYMENT= # e.g. gpt-4o
+AZURE_OPENAI_API_VERSION=2024-06-01
+AZURE_OPENAI_MODELS_TTL=3600
+
+# =========================
+# AWS Bedrock
+# =========================
+BEDROCK_ENABLED=false
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=us-east-1
+BEDROCK_MODELS_TTL=3600
 ```
 
 ---
