@@ -8,6 +8,7 @@ use AmirKateb\AiSuite\Contracts\HistoryStoreInterface;
 use AmirKateb\AiSuite\Support\History\InMemoryHistoryStore;
 use AmirKateb\AiSuite\Console\Commands\AiModelsCommand;
 use AmirKateb\AiSuite\Console\Commands\AiChatCommand;
+use AmirKateb\AiSuite\Console\Commands\AiSeedPricingCommand;
 use AmirKateb\AiSuite\Http\Middleware\SetAiDriverFromHeader;
 use AmirKateb\AiSuite\Contracts\FineTuneStoreInterface;
 use AmirKateb\AiSuite\Support\FineTune\FileFineTuneStore;
@@ -19,6 +20,14 @@ class AiSuiteServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../Config/ai.php' => config_path('ai.php'),
         ], 'config');
+
+        $this->publishes([
+            __DIR__ . '/../Database/migrations' => database_path('migrations'),
+        ], 'migrations');
+
+        $this->publishes([
+            __DIR__ . '/../Database/seeders/AiSuitePricingSeeder.php' => database_path('seeders/AiSuitePricingSeeder.php'),
+        ], 'seeders');
 
         $this->mergeConfigFrom(__DIR__ . '/../Config/ai.php', 'ai');
 
@@ -36,6 +45,7 @@ class AiSuiteServiceProvider extends ServiceProvider
             $this->commands([
                 AiModelsCommand::class,
                 AiChatCommand::class,
+                AiSeedPricingCommand::class,
             ]);
         }
     }
