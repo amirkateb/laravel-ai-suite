@@ -1,0 +1,8 @@
+[
+  {"provider":"aws_bedrock","model":"anthropic.claude-3-opus-20240229-v1:0","input_per_1m":15.00,"output_per_1m":75.00,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"aws_bedrock_oct2025"},
+  {"provider":"aws_bedrock","model":"anthropic.claude-3-sonnet-20240229-v1:0","input_per_1m":3.00,"output_per_1m":15.00,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"aws_bedrock_oct2025"},
+  {"provider":"aws_bedrock","model":"anthropic.claude-3-haiku-20240307-v1:0","input_per_1m":0.25,"output_per_1m":1.25,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"aws_bedrock_oct2025"},
+  {"provider":"aws_bedrock","model":"mistral.mixtral-8x7b","input_per_1m":0.45,"output_per_1m":0.90,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"aws_bedrock_oct2025"},
+  {"provider":"aws_bedrock","model":"meta.llama3-70b-instruct-v1:0","input_per_1m":0.80,"output_per_1m":1.60,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"aws_bedrock_oct2025"},
+  {"provider":"aws_bedrock","model":"cohere.command-r-plus","input_per_1m":3.00,"output_per_1m":15.00,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"aws_bedrock_oct2025"}
+]
