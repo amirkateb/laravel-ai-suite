@@ -6,6 +6,9 @@ use Illuminate\Support\ServiceProvider;
 use AmirKateb\AiSuite\AiManager;
 use AmirKateb\AiSuite\Contracts\HistoryStoreInterface;
 use AmirKateb\AiSuite\Support\History\InMemoryHistoryStore;
+use AmirKateb\AiSuite\Console\Commands\AiModelsCommand;
+use AmirKateb\AiSuite\Console\Commands\AiChatCommand;
+use AmirKateb\AiSuite\Http\Middleware\SetAiDriverFromHeader;
 
 class AiSuiteServiceProvider extends ServiceProvider
 {
@@ -18,6 +21,20 @@ class AiSuiteServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/../Config/ai.php', 'ai');
 
         $this->loadRoutesFrom(__DIR__ . '/../Routes/web.php');
+
+        if (file_exists(__DIR__ . '/../Support/helpers.php')) {
+            require_once __DIR__ . '/../Support/helpers.php';
+        }
+
+        $router = $this->app['router'];
+        $router->aliasMiddleware('ai.driver', SetAiDriverFromHeader::class);
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                AiModelsCommand::class,
+                AiChatCommand::class,
+            ]);
+        }
     }
 
     public function register(): void
