@@ -9,6 +9,8 @@ use AmirKateb\AiSuite\Support\History\InMemoryHistoryStore;
 use AmirKateb\AiSuite\Console\Commands\AiModelsCommand;
 use AmirKateb\AiSuite\Console\Commands\AiChatCommand;
 use AmirKateb\AiSuite\Http\Middleware\SetAiDriverFromHeader;
+use AmirKateb\AiSuite\Contracts\FineTuneStoreInterface;
+use AmirKateb\AiSuite\Support\FineTune\FileFineTuneStore;
 
 class AiSuiteServiceProvider extends ServiceProvider
 {
@@ -21,6 +23,7 @@ class AiSuiteServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/../Config/ai.php', 'ai');
 
         $this->loadRoutesFrom(__DIR__ . '/../Routes/web.php');
+        $this->loadRoutesFrom(__DIR__ . '/../Routes/fine_tune.php');
 
         if (file_exists(__DIR__ . '/../Support/helpers.php')) {
             require_once __DIR__ . '/../Support/helpers.php';
@@ -47,6 +50,10 @@ class AiSuiteServiceProvider extends ServiceProvider
 
         $this->app->singleton(HistoryStoreInterface::class, function () {
             return new InMemoryHistoryStore();
+        });
+
+        $this->app->singleton(FineTuneStoreInterface::class, function () {
+            return new FileFineTuneStore();
         });
     }
 }
