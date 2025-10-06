@@ -1,0 +1,7 @@
+[
+  {"provider":"google_gemini","model":"gemini-2.0-pro","input_per_1m":3.5,"output_per_1m":10.5,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"google"},
+  {"provider":"google_gemini","model":"gemini-2.0-flash","input_per_1m":0.35,"output_per_1m":1.05,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"google"},
+  {"provider":"google_gemini","model":"gemini-2.0-flash-lite","input_per_1m":0.1,"output_per_1m":0.4,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"google"},
+  {"provider":"google_gemini","model":"gemma-2-27b-it","input_per_1m":0.2,"output_per_1m":0.8,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"google"},
+  {"provider":"google_gemini","model":"text-embedding-004","input_per_1m":0.1,"output_per_1m":0.0,"cached_input_per_1m":null,"unit":1000000,"currency":"USD","source":"google"}
+]
