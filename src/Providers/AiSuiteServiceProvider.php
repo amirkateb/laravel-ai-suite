@@ -26,7 +26,7 @@ class AiSuiteServiceProvider extends ServiceProvider
         ], 'migrations');
 
         $this->publishes([
-            __DIR__ . '/../Database/seeders/AiSuitePricingSeeder.php' => database_path('seeders/AiSuitePricingSeeder.php'),
+            __DIR__ . '/../Database/seeders/AiSuiteFullPricingSeeder.php' => database_path('seeders/AiSuitePricingSeeder.php'),
         ], 'seeders');
 
         $this->mergeConfigFrom(__DIR__ . '/../Config/ai.php', 'ai');
