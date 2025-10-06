@@ -1,0 +1,7 @@
+[
+  {"provider":"deepseek","model":"deepseek-chat","input_per_1m":0.14,"output_per_1m":0.28,"cached_input_per_1m":0.014,"unit":1000000,"currency":"USD","source":"deepseek_api_oct2025"},
+  {"provider":"deepseek","model":"deepseek-reasoner","input_per_1m":0.55,"output_per_1m":2.19,"cached_input_per_1m":0.055,"unit":1000000,"currency":"USD","source":"deepseek_api_oct2025"},
+  {"provider":"deepseek","model":"deepseek-coder","input_per_1m":0.20,"output_per_1m":0.80,"cached_input_per_1m":0.02,"unit":1000000,"currency":"USD","source":"deepseek_docs"},
+  {"provider":"deepseek","model":"deepseek-math","input_per_1m":0.20,"output_per_1m":0.80,"cached_input_per_1m":0.02,"unit":1000000,"currency":"USD","source":"deepseek_docs"},
+  {"provider":"deepseek","model":"deepseek-r1","input_per_1m":1.00,"output_per_1m":3.00,"cached_input_per_1m":0.10,"unit":1000000,"currency":"USD","source":"deepseek_lab_oct2025"}
+]
